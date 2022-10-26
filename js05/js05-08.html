@@ -15,27 +15,27 @@
     <2> 가위바위보 게임을 만들라.
       입력은 prompt로 가위,바위,보 중에 하나 받기*/
 
-      const ran = parseInt(Math.random()*100)+1
-      console.log(ran)
+      const ran = parseInt(Math.random()*100)+1 // 1~100 랜덤선정
+      // console.log(ran) //정답 증거
       let user ='';
       let ct = 5;
       while (ct>0){
-        ct--
+        ct-- //기회부터 소진 후 시작
         user = Number(prompt('1 ~ 100 까지 중에 값을 하나 맞춰봐'))
-      if (ran==user){
-        alert('정답입니다!! 값은:'+ ran);break
-      }else if(ran>user){
-        alert('정답이 더 큰 수 입니다. 남은기회:' + ct)
-      }else if(ran<user){
-        alert('정답이 더 작은 수 입니다. 남은기회:' + ct)
+        if (ran==user){
+          alert('정답입니다!! 값은:'+ ran);break
+        }else if(ran>user){
+          alert('정답이 더 큰 수 입니다. 남은기회:' + ct)
+        }else if(ran<user){
+          alert('정답이 더 작은 수 입니다. 남은기회:' + ct)
+        }      
       }
-      
-    }
-    if(ran==user){
-      document.write('<h1>성공을 축하합니다!!</h1>')
-    }else{
-      document.write('<h1>기회를 모두 소진하셨습니다.</h1>')
-    }
+      /*결과 출력*/
+      if(ran==user){
+        document.write('<h1>성공을 축하합니다!!</h1>')
+      }else{
+        document.write('<h1>기회를 모두 소진하셨습니다.</h1>')
+      }
     </script>
 </body>
 </html>
