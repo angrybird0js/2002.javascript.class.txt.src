@@ -29,13 +29,13 @@
     <script>
         let list = '<table>'
         for (let j = 0; j < 20; j++) {
-            if (j) {
+            if (j) { //세로로 번호 부여
                 list += `<tr><td>${j}</td>`
             } else {
                 list += `<tr><td></td>`
             }
             for (let i = 2; i < 20; i++) {
-                if (j < 1) {
+                if (j < 1) {  //위쪽 타이틀 부여
                     list += `<td>${i}단</td>`
                 } else {
                     list += `<td>${i}x${j}=${i*j}</td>`
@@ -45,7 +45,7 @@
         }
         list += '</table>'
         document.write(list)
-       console.log(list) //검토용
+    //    console.log(list) //검토용
     </script>
 
 </body>
