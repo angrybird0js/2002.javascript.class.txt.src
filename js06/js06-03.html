@@ -7,16 +7,16 @@
     <script>
         console.time()
         let dice = d1 = d2 = d3 = d4 = d5 = d6 = er = lucky = 0;
-        let my = 4;        
+        const choice = 4 //확률 %
     for(let i=0;i<1000000;i++){
         lucky = Math.floor(Math.random()*100)+1;
         dice = Math.floor(Math.random()*6)+1;
-        if(dice==1){if(lucky<=my){d3++}else{d1++}}
-        else if(dice==2){if(lucky<=my){d3++}else{d2++}}
+        if(dice==1){if(lucky<=choice){d3++}else{d1++}}
+        else if(dice==2){if(lucky<=choice){d3++}else{d2++}}
         else if(dice==3){d3++}
-        else if(dice==4){if(lucky<=my){d3++}else{d4++}}
-        else if(dice==5){if(lucky<=my){d3++}else{d5++}}
-        else if(dice==6){if(lucky<=my){d3++}else{d6++}}
+        else if(dice==4){if(lucky<=choice){d3++}else{d4++}}
+        else if(dice==5){if(lucky<=choice){d3++}else{d5++}}
+        else if(dice==6){if(lucky<=choice){d3++}else{d6++}}
         else{er++;}
     }
     document.write('주사위 1의 개수:'+d1+'<br>'
