@@ -30,11 +30,11 @@
         // }
         // document.write('이용해 주셔서 감사합니다!')
         let comc=userc=ct=0;
-        
+        let com = ['가위','바위','보']
+        let ran = 0;
         while(1){
-            let ran = parseInt(Math.random()*3) // 0~2 랜덤선정
-            let com = ['가위','바위','보']
             const user = prompt('가위,바위,보,그만 중 하나를 입력하세요.')
+            ran = parseInt(Math.random()*3) // 0~2 랜덤선정
             if (com[ran]==user){
                 ct++ // 게임 수
                 alert('['+ct+'회째]\n컴퓨터:'+com[ran]+'\n당신:'+user+'\n비겼습니다 -.-\n컴퓨터'+comc+'승, 당신'+userc+'승')
