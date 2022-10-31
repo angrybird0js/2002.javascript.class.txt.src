@@ -40,6 +40,7 @@
                 if(arr.indexOf(lotto)==-1)arr.push(lotto)
                 }            
             res = arr.sort(function(a,b){return a-b})
+            // res = arr.sort((a,b)=>{a-b})
 
     /* 번호별 개수 출력1 */  
             for(let j=0;j<6;j++)box[res[j]-1]++
