@@ -8,13 +8,6 @@ let num=0
             <button onclick="updn(${-x})">감소</button>`)
                     document.close()
         }
-
-
-
-
-
-
-        
     //     let num=0
     //     function updn(x){
     //         console.log(x)
