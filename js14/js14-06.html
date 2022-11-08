@@ -12,6 +12,14 @@
         // 거기서 35보다 큰 수중에
         // 10의 배수만 뽑아서
         // 요소 하나씩 출력하라.
+        const arr = []
+        for (let i =20; i<90; i+=2)arr.push(i)
+
+        arr
+            .filter(v=>v>35&&v%10==0)
+            .map(v=>v*2)
+            .forEach(v=>console.log(v))
+
     </script>
 </body>
 </html>
