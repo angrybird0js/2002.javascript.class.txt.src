@@ -6,6 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>타이머문제</title>
     <script src="./js16js/16-04.js"></script>
+    <script>
+        //hoisting : 스크립트에 선언된 변수와 함수를 메모리에 먼저 로드시키는 현상
+        (function() {
+            // fn()
+        })();
+
+        //다큐먼트를 모두 읽고 난뒤에 실행하는 함수 window.onload
+        window.onload = function(){
+            document.querySelector("h2").style.background = "red"
+        }
+        fn()
+
+        // var count = 5
+        // var countDown
+        delay = setTimeout(()=>{
+            // console.log("1초 뒤에 실행")
+            // location.href = "https://www.google.com/search?q"
+        },1*1000)
+        var state = false
+
+        // 선언적 함수
+        function fn() {
+            let count = 5
+            let countDown = setInterval(function(){
+                if(!state) {
+                    // console.log(typeof(count))
+                    if(count > 0)
+                        console.log(count--)
+                    else { 
+                        console.log('펑!')
+                        clearInterval(countDown)
+                    }
+                }
+            },1000)
+        };
+
+        //익명 함수
+        fnx = function(){
+            state = !state
+        }
+        // fnx(); //이부분에서 선언적 함수나 익명함수를 호출하면 문제가 안됨
+    </script>
 </head>
 <body>
     <pre><h2>
