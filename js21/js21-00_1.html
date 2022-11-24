@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>오브젝트를 배열로</title>
     <script>
         document.addEventListener("DOMContentLoaded",()=>{
             const books = [
@@ -29,6 +29,7 @@
                 publisher: "위키북스",
                 },
             ];
+            /* 오브젝트를 배열로 */
             const books_arr = Object.keys(books[0]) // 객체의 키를 분리하여 배열로 추출
             const books_arr2 = Object.values(books[0]) // 객체의 값을 분리하여 배열로 추출
             console.log(books_arr)

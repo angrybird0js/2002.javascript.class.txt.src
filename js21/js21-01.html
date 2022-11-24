@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라데이션</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const divs = document.querySelectorAll('div')
+
+            divs.forEach((v,i)=>{
+                console.log(v,i)
+                const val = i *10
+                v.style.height = '10px'
+                v.style.backgroundColor = `rgb(${val},${val},${val})`
+            })
+            
+            function fn() {
+                    console.log('된다 펑션')
+                }
+        })
+    </script>
+</head>
+<body>
+    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <button onclick="fn()">눌러줘</button>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>배열을 오브젝트로</title>
 <script>
     document.addEventListener('DOMContentLoaded',()=>{
 
@@ -13,12 +13,16 @@
         const obj = {}
 
         /* 배열을 오브젝트로 만들기1 */
-        arr1.forEach((v,i)=>{
-            obj[i] = v
-        })
-        console.log(obj)            
+        // arr1.forEach((v,i)=>{
+        //     obj[i] = v
+        // })
+        // console.log(obj)            
 
         /* 배열을 오브젝트로 만들기2 , 키도 지정해 보기 */
+        arr1.forEach((v,i)=>{
+            obj[key[i]] = v
+        })
+        console.log(obj) 
 
     })
 </script>
