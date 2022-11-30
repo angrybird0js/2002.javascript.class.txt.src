@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>키로 별 이동하기</title>
+    <title>게임만들기</title>
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
             const star = document.createElement('h1')
             document.body.appendChild(star)
-            star.innerHTML = '★'
             star.style.position = 'absolute'
+            // star.innerHTML = '★'
+            
 
+
+            let status = true
+            setInterval(()=>{
+                if(status){
+                    star.innerHTML = '<img src="./js25img/pac1.png">'
+                }else{
+                    star.innerHTML = '<img src="./js25img/pac2.png">'
+                }
+                status = !status
+            },200)
+            
             let [x,y]=[0,0]
             const block = 20
             const print =_=>{
@@ -24,10 +36,10 @@
             let check = 0;
             document.body.addEventListener('keydown',event=>{
                 check = event.keyCode
-                if(left===check)x -= 1
-                if(up===check)y -= 1
-                if(right===check)x += 1
-                if(down===check)y += 1
+                if(left===check){x -= 1;star.style.transform = 'scaleX(-1)'} // 좌우 대칭
+                if(up===check){y -= 1;star.style.transform = 'rotate(270deg)'}
+                if(right===check){x += 1;star.style.transform = 'scaleX(1)'}
+                if(down===check){y += 1;;star.style.transform = 'rotate(90deg)'}
                 print()
             })
         })
@@ -36,10 +48,6 @@
     </script>
 </head>
 <body>
-    <audio
-        controls
-        src="./byulbit.mp3">
-                이 문장은 브라우저에 오디오가 지원되지 않을 때 나타납니다.
-    </audio>
+    
 </body>
 </html>
