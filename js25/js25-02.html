@@ -16,7 +16,7 @@
         document.addEventListener("DOMContentLoaded",()=>{
             const input = document.getElementById("floatingInput");
             const button = document.getElementById("b1")
-            const p = document.getElementById("result");
+            const p = document.getElementsByTagName("p");
             
 
             const won = 1313
@@ -27,7 +27,7 @@
                     return;
                 }
                 let sum = dollar * won
-                p.textContent = sum.toLocaleString("ko-KR")+ '원'
+                p[0].textContent = sum.toLocaleString("ko-KR")+ '원'
             })
 
         })
