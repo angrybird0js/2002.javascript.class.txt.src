@@ -29,7 +29,12 @@
                 }
             }
             )
-            // input.checked = false
+            button.addEventListener('click',(event)=>{
+                clearInterval(id) // 타이머 초기화
+                timer = 0
+                h1.innerHTML = timer+'초'
+                input.checked = false
+            })
         })
     </script>
 </head>
