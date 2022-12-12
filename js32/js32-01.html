@@ -10,6 +10,10 @@
         --bkcolor0:#fae6d1;
         --bkcolor1:#fcd3a6;
         --bkcolor2:#f0ae68;
+        --bkcolor3:#ffe4fa;
+        --bkcolor4:#d4b8e1;
+        --bkcolor5:#d788fe;
+        --bkcolor6:#433748;
         --bcolor0:#e6f3ff;
         --bcolor1:#b3d6f7;
         --bcolor2:#60b2ff;
@@ -18,6 +22,7 @@
         --bcolor5:#9ffed5;
         --bcolor6:#60ffba;
         --bcolor7:#357157;
+
 
     }
     body, button, input{
@@ -31,7 +36,7 @@
     .container{
         padding: 30px;
         border-radius: 20px;
-        background-color: var(--bkcolor0);
+        background-color: var(--bkcolor3);
         width:100%;
         max-width: 25rem;
         height: auto;
@@ -39,8 +44,14 @@
     h1{
         text-align: center;
         margin: 0 0 10px 0;
+        color: var(--bcolor7);
+    }
+    .input-set{
+        height: 40px;
+        margin-bottom: 7px;
     }
     #new-input{
+        color: var(--bcolor7);
         font-size: 1em;
         font-weight: bold;
         margin: 0px;
@@ -65,7 +76,26 @@
         background-color: var(--bcolor1);
     }
     button{
-        
+        width: 80px;
+        height: 40px;
+        margin: 3px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: var(--bcolor0);
+        border: 1px solid rgba(0,0,0,0.5);
+        color: var(--bcolor3);
+        font-size: 1em;
+    }
+    button:hover{
+        width: 80px;
+        height: 40px;
+        margin: 3px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: var(--bkcolor6);
+        border: 1px solid rgba(0,0,0,0.5);
+        color: var(--bcolor0);
+        font-size: 1em;
     }
 
     </style>
@@ -76,11 +106,12 @@
     <div class="container">
         <div class="main">
             <h1>할 일 목록</h1>
-            <div>
+            <div class="input-set">
                 <input type="text" id="new-input">
                 <input type="button" id="new-add" value="할일추가"></div>
             <button id="sel-del">완료제거</button>
             <button id="all-del">모두제거</button></div>
+            <hr>
         <div id="list"></div>
     </div>
 </body>
