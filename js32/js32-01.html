@@ -97,6 +97,25 @@
         color: var(--bcolor0);
         font-size: 1em;
     }
+    h2{
+        margin: 0;
+        /* overflow: hidden; */
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    .list-card{
+        background-color: var(--bcolor1);
+        border-radius: 10px;
+        color: white;
+        max-width:85%;
+        height: 45px;
+        padding: 10px;
+        margin: 0 0 10px 0;
+        overflow: hidden;
+        /* white-space: normal; */
+        /* word-wrap: break-word; */
+
+    }
 
     </style>
 
@@ -110,9 +129,24 @@
                 <input type="text" id="new-input">
                 <input type="button" id="new-add" value="할일추가"></div>
             <button id="sel-del">완료제거</button>
-            <button id="all-del">모두제거</button></div>
+            <button id="all-del">모두제거</button>
+        </div>
             <hr>
-        <div id="list"></div>
+        <div id="list">
+            <div class="list-card">
+                <span>체크</span>
+                <input type="checkbox">
+                <!-- <button>삭제</button> -->
+                <h2>안녕하세요.반가워요.안녕하세요.반가워요.안녕하세요.반가워요.안녕하세요.반가워요.</h2>
+            </div>
+            <div class="list-card">
+                <span>체크</span>
+                <input type="checkbox">
+                <!-- <button>삭제</button> -->
+                <h2>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h2>
+            </div>
+        </div>
     </div>
+    
 </body>
 </html>
