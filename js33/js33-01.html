@@ -222,7 +222,7 @@
             list.appendChild(listCard).append(span,chk,listB,content)
             Object.assign(listCard,{
                 id:`li${id}`,
-                className: "list-card"
+                className: ck?"list-card-checked":"list-card"
             })
             Object.assign(chk,{
                 id:`i${id}`,
@@ -249,6 +249,7 @@
             chk.addEventListener('click', (e)=>{
                 ck = e.currentTarget.checked ? true : false
                 listCard.setAttribute('class',isChecked(ck))
+                listB.setAttribute('class',ck?'showB':'no-showB')
                 span.textContent = ck? '완료':'체크'
                 // console.log(e.currentTarget.id)
 
@@ -256,6 +257,8 @@
 
                 edata[fck].check = e.currentTarget.checked?true:false
                 localSave(edata) // 로컬 스토리지에 저장
+                
+
             })
 
 
