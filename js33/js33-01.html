@@ -153,24 +153,39 @@
         let ck = false
         newInput.addEventListener('keyup',(e)=>{
             inputData = e.currentTarget.value
-            if(keyCode == 13) add()
+            if(e.keyCode == 13) add()
         })
-        let id = 0
+        let id
         let arr = []
         newAdd.addEventListener('click', add )
         
-        
         function add() {
+            const h1 = document.querySelector('h1')
             if(inputData??0){
+                id = + localStorage.getItem('id') ?? 0
+                edata = localLoad()
                 listLoaded(id,inputData,ck)
-                arr.push({id:id,data:inputData,check:ck})
+                edata.push({id:id,data:inputData,check:ck})
+                localLoad(edata)
                 inputData = ''
                 newInput.textContent = ''
                 newInput.value = null
                 id++
+                localStorage.setItem('id',id) //로컬에 저장
+                h1.textContent = '나의 할일 목록'
+            }else{
+                h1.textContent = '내용을 작성해 주세요 !!'
             }
         }
 
+        function localLoad(){
+            let earr = localStorage.getitem('arr')
+            return JSON.parse(earr)?? [] //없을땐 빈배열
+        }
+        function localSave(data){
+            let memory = JSON.stringify(data)
+            localStorage.setItem('arr',memory)
+        }
 
 
         function listLoaded(id,inputData,ck){
