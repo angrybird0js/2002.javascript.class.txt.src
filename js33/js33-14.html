@@ -31,13 +31,13 @@
           if (length <= 0) {
             throw "길이는 0보다 커야 합니다.";
           }
-          this.#length = length;
+          this.#length = length; // 값을 넣었음
         }
       }
 
       // 클래스 사용하기
       const squareA = new Square(10);
-      console.log(`한 변의 길이: ${squareA.length}`);
+      console.log(`한 변의 길이: ${squareA.length}`);  // 메소드형태로 호출 하지 않음. 속성형태로 호출함
       console.log(`둘레: ${squareA.perimeter}`);
       console.log(`넓이: ${squareA.area}`);
 
