@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todo List</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap'); 
     :root{
         --bkcolor0:#fae6d1;
@@ -104,6 +105,7 @@
         word-wrap: break-word;
     }
     .list-card{
+        transition: 1s ease;
         background-color: var(--bcolor1);
         border-radius: 10px;
         color: white;
@@ -114,10 +116,39 @@
         overflow: hidden;
         /* white-space: normal; */
         /* word-wrap: break-word; */
-
     }
-
+    .list-card:hover{
+        transition: 1s ease;
+        background-color: var(--bcolor3);
+        border-radius: 10px;
+        color: white;
+        max-width:100%;
+        height: auto;
+        padding: 10px;
+        margin: 0 0 10px 0;
+        overflow: hidden;
+        /* white-space: normal; */
+        /* word-wrap: break-word; */
+    }
     </style>
+<script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+        const type = document.querySelector('h1')
+        new TypeIt(type,{speed:50}).pause(700).move(-6).type('나의 ').go()
+
+        
+
+
+
+
+
+
+
+    })
+</script>
+
+
+
 
 </head>
 <body>
