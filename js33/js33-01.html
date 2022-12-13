@@ -130,6 +130,12 @@
         /* white-space: normal; */
         /* word-wrap: break-word; */
     }
+    .showB{
+        float: right
+    }
+    .no-showB{
+      display: none;  
+    }
     </style>
 <script>
     document.addEventListener("DOMContentLoaded", ()=>{
@@ -153,12 +159,11 @@
         let arr = []
         newAdd.addEventListener('click',(e)=>{
             if(inputData??0){
-                listLoad()
+                listLoaded(id,inputData,ck)
                 arr.push({id:id,data:inputData,check:ck})
                 inputData = ''
                 newInput.textContent = ''
                 newInput.value = null
-
                 id++
             }
         })
@@ -172,8 +177,6 @@
             const content = document.createElement('h2')
             const listB = document.createElement('button')
             list.appendChild(listCard).append(span,chk,listB,content)
-            
-            
             Object.assign(listCard,{
                 id:`li${id}`,
                 className: "list-card"
@@ -186,6 +189,11 @@
             Object.assign(span,{
                 id:`c${id}`,
                 textContent:  ck  ?'완료':'체크'            
+            })
+            Object.assign(listB,{
+                className: ck?'showB':'no-showB',
+                id: `b${id}`,
+                textContent: '삭제'                
             })
 
             content.textContent = inputData
@@ -219,19 +227,7 @@
             <button id="all-del">모두제거</button>
         </div>
             <hr>
-        <div id="list">
-            <div class="list-card">
-                <span>체크</span>
-                <input type="checkbox">
-                <!-- <button>삭제</button> -->
-                <h2>안녕하세요.반가워요.안녕하세요.반가워요.안녕하세요.반가워요.안녕하세요.반가워요.</h2>
-            </div>
-            <div class="list-card">
-                <span>체크</span>
-                <input type="checkbox">
-                <!-- <button>삭제</button> -->
-                <h2>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h2>
-            </div>
+        <div id="list">            
         </div>
     </div>
     
