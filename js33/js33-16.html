@@ -7,6 +7,33 @@
     <title>클래스의 고급기능(get키워드 set키워드)3번째</title>
 </head>
 <body>
-    <script></script>
+    <script>
+        class Person{
+            #age;
+            constructor(name, age, gender){
+            this.name = name
+            this.age = age
+            this.gender = gender
+        }
+            // getter
+            get age(){
+                return this.#age
+            }
+
+            // setter
+            set age(value){
+                if(value>0 && value <90){
+                    this.#age = value
+                }
+            }
+            print(){
+                console.log('이름:'+this.name + ' 나이:' +this.#age+' 성별:'+this.gender)
+            }
+
+
+
+    }
+    const test = new Person('홍길동',20,'남')
+    </script>
 </body>
 </html>
