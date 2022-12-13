@@ -153,11 +153,14 @@
         let ck = false
         newInput.addEventListener('keyup',(e)=>{
             inputData = e.currentTarget.value
-            // if(keyCode == 13) 추가버튼역할
+            if(keyCode == 13) add()
         })
         let id = 0
         let arr = []
-        newAdd.addEventListener('click',(e)=>{
+        newAdd.addEventListener('click', add )
+        
+        
+        function add() {
             if(inputData??0){
                 listLoaded(id,inputData,ck)
                 arr.push({id:id,data:inputData,check:ck})
@@ -166,7 +169,7 @@
                 newInput.value = null
                 id++
             }
-        })
+        }
 
 
 
@@ -198,22 +201,8 @@
 
             content.textContent = inputData
         }
-
-
-        
-
-
-
-
-
-
-
     })
 </script>
-
-
-
-
 </head>
 <body>
     <!-- div.container>div.main>h1+div>input#new-input+input#new-add^button#sel-del+button#all-del^div#list -->
