@@ -136,6 +136,46 @@
         const type = document.querySelector('h1')
         new TypeIt(type,{speed:50}).pause(700).move(-6).type('나의 ').go()
 
+        const newInput = document.getElementById('new-input')
+        const newAdd = document.getElementById('new-add')
+        const selDel = document.getElementById('sel-del')
+        const allDel = document.getElementById('all-del')
+        const list = document.getElementById('list')
+        newInput.setAttribute('placeholder', '내용을 입력하세요')
+
+        let inputData
+        newInput.addEventListener('keyup',(e)=>{
+            inputData = e.currentTarget.value
+        })
+
+
+        function listLoaded(){
+            const listCard = document.createElement('div')
+            const span = document.createElement('span')
+            const chk = document.createElement('input')
+            const content = document.createElement('h2')
+            const listB = document.createElement('button')
+            list.appendChild(listCard).append(span,chk,listB,content)
+            
+            let id=0
+            Object.assign(listCard,{
+                id:`li${id}`,
+                className: "list-card"
+            })
+            Object.assign(chk,{
+                id:`i${id}`,
+                type: 'checkbox',
+                // checked:  ????  ?'checked':'';
+            })
+            Object.assign(span,{
+                id:`c${id}`,
+                // textContent:  ???  ?'완료':'체크'            
+            })
+
+            // content.textContent = ???
+        }
+
+
         
 
 
