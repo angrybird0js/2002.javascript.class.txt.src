@@ -180,7 +180,7 @@
             inputData = e.currentTarget.value
             if(e.keyCode == 13) add()
         })
-        let id
+        let id, fck
         let arr = []
         newAdd.addEventListener('click', add )
         
@@ -240,13 +240,24 @@
             })
             content.textContent = inputData
 
+            
+            function search(ckid){ // search에 넣은 ckid 값을 오브젝트에서 찾는다.
+                fck = edata.findIndex(v=>v.id==ckid) // 값이 같으면 그 값을 fck 로 반환
+            }
+
             const isChecked =e=>e?'list-card-checked':'list-card'
             chk.addEventListener('click', (e)=>{
                 ck = e.currentTarget.checked ? true : false
                 listCard.setAttribute('class',isChecked(ck))
                 span.textContent = ck? '완료':'체크'
+                // console.log(e.currentTarget.id)
 
+                search(e.currentTarget.id.slice(1))
+
+                edata[fck].check = e.currentTarget.checked?true:false
+                localSave(edata) // 로컬 스토리지에 저장
             })
+
 
 
         }
