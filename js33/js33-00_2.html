@@ -9,13 +9,13 @@
 <body>
     <script>
         const User = function( name, age){
-            let that = {}
-            that.name = name
-            that.age = age
-            that.show = function () {
+            // let this = {} 
+            this.name = name
+            this.age = age
+            this.show = function () {
                 console.log(name+' 그리고 '+age)
             }
-            return that
+            // return this
         }
 
     </script>
