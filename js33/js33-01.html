@@ -144,12 +144,28 @@
         newInput.setAttribute('placeholder', '내용을 입력하세요')
 
         let inputData
+        let ck = false
         newInput.addEventListener('keyup',(e)=>{
             inputData = e.currentTarget.value
+            // if(keyCode == 13) 추가버튼역할
+        })
+        let id = 0
+        let arr = []
+        newAdd.addEventListener('click',(e)=>{
+            if(inputData??0){
+                listLoad()
+                arr.push({id:id,data:inputData,check:ck})
+                inputData = ''
+                newInput.textContent = ''
+                newInput.value = null
+
+                id++
+            }
         })
 
 
-        function listLoaded(){
+
+        function listLoaded(id,inputData,ck){
             const listCard = document.createElement('div')
             const span = document.createElement('span')
             const chk = document.createElement('input')
@@ -157,7 +173,7 @@
             const listB = document.createElement('button')
             list.appendChild(listCard).append(span,chk,listB,content)
             
-            let id=0
+            
             Object.assign(listCard,{
                 id:`li${id}`,
                 className: "list-card"
@@ -165,14 +181,14 @@
             Object.assign(chk,{
                 id:`i${id}`,
                 type: 'checkbox',
-                // checked:  ????  ?'checked':'';
+                checked:  ck  ?'checked':''
             })
             Object.assign(span,{
                 id:`c${id}`,
-                // textContent:  ???  ?'완료':'체크'            
+                textContent:  ck  ?'완료':'체크'            
             })
 
-            // content.textContent = ???
+            content.textContent = inputData
         }
 
 
