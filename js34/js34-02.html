@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class static</title>
+</head>
+<body>
+    <script>
+        /* 방식1 */
+        // class User{
+        //     static staticMethod(){
+        //         alert(this === User)
+        //     }
+        // }
+        // User.staticMethod() // true
+
+        /* 방식2 */
+        class User{}
+        User.staticMethod = function(){
+            alert(this === User)
+        }
+        User.staticMethod() // true
+
+    </script>
+</body>
+</html>
